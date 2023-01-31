@@ -16,33 +16,72 @@
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Ask Me Anything" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="f30-4H-ulr">
-                                <rect key="frame" x="41" y="195" width="310" height="42"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" name="Chalkduster" family="Chalkduster" pointSize="33"/>
-                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="ball1" translatesAutoresizingMaskIntoConstraints="NO" id="Zbr-md-NKc">
-                                <rect key="frame" x="76" y="362" width="240" height="128"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            </imageView>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9zy-1d-vbh">
-                                <rect key="frame" x="153" y="627" width="91" height="56"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <color key="tintColor" systemColor="systemBlueColor"/>
-                                <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="plain" title="Ask">
-                                    <fontDescription key="titleFontDescription" name="Chalkduster" family="Chalkduster" pointSize="33"/>
-                                </buttonConfiguration>
-                                <connections>
-                                    <action selector="askButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="MtQ-cc-KE1"/>
-                                </connections>
-                            </button>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="1" translatesAutoresizingMaskIntoConstraints="NO" id="Yb7-nn-fOb" userLabel="Container Stack View">
+                                <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="zCC-cS-cea" userLabel="Label View">
+                                        <rect key="frame" x="0.0" y="0.0" width="393" height="283.33333333333331"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Ask Me Anything" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="f30-4H-ulr">
+                                                <rect key="frame" x="41.666666666666657" y="120.66666666666669" width="309.66666666666674" height="42"/>
+                                                <fontDescription key="fontDescription" name="Chalkduster" family="Chalkduster" pointSize="33"/>
+                                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                        <constraints>
+                                            <constraint firstItem="f30-4H-ulr" firstAttribute="centerX" secondItem="zCC-cS-cea" secondAttribute="centerX" id="9v0-4b-5op"/>
+                                            <constraint firstItem="f30-4H-ulr" firstAttribute="centerY" secondItem="zCC-cS-cea" secondAttribute="centerY" id="tOf-ln-qjc"/>
+                                        </constraints>
+                                    </view>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ZmW-cE-UQY" userLabel="8 Ball View">
+                                        <rect key="frame" x="0.0" y="284.33333333333337" width="393" height="283.33333333333337"/>
+                                        <subviews>
+                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ball1" translatesAutoresizingMaskIntoConstraints="NO" id="Zbr-md-NKc">
+                                                <rect key="frame" x="44" y="51.666666666666686" width="305" height="180"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="180" id="G2Y-h4-v2m"/>
+                                                    <constraint firstAttribute="height" constant="180" id="dC3-0O-Gqi"/>
+                                                </constraints>
+                                            </imageView>
+                                        </subviews>
+                                        <constraints>
+                                            <constraint firstItem="Zbr-md-NKc" firstAttribute="centerX" secondItem="ZmW-cE-UQY" secondAttribute="centerX" id="dl7-G8-QrO"/>
+                                            <constraint firstItem="Zbr-md-NKc" firstAttribute="centerY" secondItem="ZmW-cE-UQY" secondAttribute="centerY" id="kkC-02-TKz"/>
+                                        </constraints>
+                                    </view>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gGv-9Y-qkl" userLabel="Ask Button View">
+                                        <rect key="frame" x="0.0" y="568.66666666666663" width="393" height="283.33333333333337"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9zy-1d-vbh">
+                                                <rect key="frame" x="151" y="113.66666666666674" width="91" height="56"/>
+                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <color key="tintColor" systemColor="systemBlueColor"/>
+                                                <state key="normal" title="Button"/>
+                                                <buttonConfiguration key="configuration" style="plain" title="Ask">
+                                                    <fontDescription key="titleFontDescription" name="Chalkduster" family="Chalkduster" pointSize="33"/>
+                                                </buttonConfiguration>
+                                                <connections>
+                                                    <action selector="askButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="MtQ-cc-KE1"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                        <constraints>
+                                            <constraint firstItem="9zy-1d-vbh" firstAttribute="centerX" secondItem="gGv-9Y-qkl" secondAttribute="centerX" id="2qa-fo-J1H"/>
+                                            <constraint firstItem="9zy-1d-vbh" firstAttribute="centerY" secondItem="gGv-9Y-qkl" secondAttribute="centerY" id="vyE-1m-wDt"/>
+                                        </constraints>
+                                    </view>
+                                </subviews>
+                            </stackView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBlueColor"/>
+                        <constraints>
+                            <constraint firstItem="Yb7-nn-fOb" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="6mD-ik-kve"/>
+                            <constraint firstAttribute="trailing" secondItem="Yb7-nn-fOb" secondAttribute="trailing" id="9e9-NM-6nb"/>
+                            <constraint firstItem="Yb7-nn-fOb" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="IMr-lo-dN3"/>
+                            <constraint firstAttribute="bottom" secondItem="Yb7-nn-fOb" secondAttribute="bottom" id="ZFh-Hl-ZPk"/>
+                        </constraints>
                     </view>
                     <connections>
                         <outlet property="imageView" destination="Zbr-md-NKc" id="Dj7-qR-zuF"/>
